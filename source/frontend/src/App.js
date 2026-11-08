@@ -74,7 +74,7 @@ const Home = () => (
 function App() {
     return (
         <ErrorBoundary>
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <SmoothScroll />
                 <Routes>
                     <Route path="/" element={<Home />} />

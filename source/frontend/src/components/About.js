@@ -27,7 +27,7 @@ function TiltPhoto() {
                 style={{ transform: `perspective(900px) rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg)` }}
             >
                 <img
-                    src="/images/garden.jpg"
+                    src={`${process.env.PUBLIC_URL}/images/garden.jpg`}
                     alt="Anirudh Guthula in a lush garden with a red brick building behind him"
                     className={`w-full aspect-[4/5] object-cover object-[55%_30%] transition-transform duration-700 ease-out ${
                         tilt.zoom ? "scale-105" : "scale-100"

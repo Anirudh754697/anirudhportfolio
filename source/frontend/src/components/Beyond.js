@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 const ITEMS = [
     {
         id: "gdg",
-        img: "/images/gdg-klhb.png",
+        img: `${process.env.PUBLIC_URL}/images/gdg-klhb.png`,
         imgClass: "h-10 w-auto",
         imgAlt: "Google Developer Groups On Campus KLHB",
         label: "COMMUNITY",
@@ -12,7 +12,7 @@ const ITEMS = [
     },
     {
         id: "azure",
-        img: "/images/ms-fundamentals-badge.svg",
+        img: `${process.env.PUBLIC_URL}/images/ms-fundamentals-badge.svg`,
         imgClass: "h-20 w-auto",
         imgAlt: "Microsoft Certified: Fundamentals badge",
         label: "CERTIFIED",
@@ -23,13 +23,13 @@ const ITEMS = [
     },
     {
         id: "aws",
-        img: "/images/aws-ccp-badge.png",
+        img: `${process.env.PUBLIC_URL}/images/aws-ccp-badge.png`,
         imgClass: "h-20 w-auto rounded-xl",
         imgAlt: "AWS Certified Cloud Practitioner badge",
         label: "CERTIFIED",
         title: "AWS Certified Cloud Practitioner",
         copy: "Certified.",
-        href: "/certificates/aws-ccp-certificate.pdf",
+        href: `${process.env.PUBLIC_URL}/certificates/aws-ccp-certificate.pdf`,
         linkText: "View certificate",
     },
 ];

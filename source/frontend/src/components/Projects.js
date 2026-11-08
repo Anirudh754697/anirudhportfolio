@@ -152,7 +152,7 @@ export default function Projects() {
                                     className="grant-shine absolute top-5 left-5 inline-flex flex-col items-start gap-1.5 rounded-2xl bg-white/95 backdrop-blur px-4 py-2.5 max-w-[calc(100%-2.5rem)]"
                                 >
                                     <img
-                                        src="/images/cartesia-startups.png"
+                                        src={`${process.env.PUBLIC_URL}/images/cartesia-startups.png`}
                                         alt="Cartesia Startups — received a startup grant from Cartesia.ai"
                                         className="h-7 md:h-8 w-auto object-contain"
                                     />
@@ -187,7 +187,7 @@ export default function Projects() {
                                     <div className="p-4">
                                         <div className="h-20 rounded-xl bg-sea-deep relative overflow-hidden flex items-center justify-center p-3">
                                             <img
-                                                src="/images/utsavs-logo.png"
+                                                src={`${process.env.PUBLIC_URL}/images/utsavs-logo.png`}
                                                 alt="Utsavs — event ticketing and registration platform logo"
                                                 className="max-h-full w-auto object-contain"
                                             />

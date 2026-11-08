@@ -19,7 +19,7 @@ export default function Hero() {
             {/* parallax beach photo */}
             <motion.div style={{ y: yPhoto }} className="absolute inset-0" data-testid="hero-photo">
                 <img
-                    src="/images/beach.jpg"
+                    src={`${process.env.PUBLIC_URL}/images/beach.jpg`}
                     alt="Anirudh Guthula at the beach, sea and soft blue sky behind him"
                     className="w-full h-full object-cover object-[62%_48%] scale-110"
                 />

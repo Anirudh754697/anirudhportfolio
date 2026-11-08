@@ -1,11 +1,11 @@
 const ITEMS = [
-    { img: "/images/jupyter-logo.svg", alt: "Jupyter Notebook" },
-    { img: "/images/microsoft-logo.svg", label: "Microsoft Certified" },
-    { img: "/images/aws-logo.svg", label: "AWS Certified" },
-    { img: "/images/github-mark.png", label: "GitHub" },
-    { img: "/images/gdg-klhb.png", alt: "Google Developer Groups On Campus KLHB" },
-    { img: "/images/vixesa-logo.png", alt: "Vixesa", rounded: true },
-    { img: "/images/cartesia-mark.svg", label: "Cartesia.ai" },
+    { img: `${process.env.PUBLIC_URL}/images/jupyter-logo.svg`, alt: "Jupyter Notebook" },
+    { img: `${process.env.PUBLIC_URL}/images/microsoft-logo.svg`, label: "Microsoft Certified" },
+    { img: `${process.env.PUBLIC_URL}/images/aws-logo.svg`, label: "AWS Certified" },
+    { img: `${process.env.PUBLIC_URL}/images/github-mark.png`, label: "GitHub" },
+    { img: `${process.env.PUBLIC_URL}/images/gdg-klhb.png`, alt: "Google Developer Groups On Campus KLHB" },
+    { img: `${process.env.PUBLIC_URL}/images/vixesa-logo.png`, alt: "Vixesa", rounded: true },
+    { img: `${process.env.PUBLIC_URL}/images/cartesia-mark.svg`, label: "Cartesia.ai" },
 ];
 
 function Track({ hidden }) {
