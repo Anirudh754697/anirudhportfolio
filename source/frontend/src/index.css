@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 38 42% 93%;
+        --foreground: 195 46% 16%;
+        --card: 40 48% 98%;
+        --card-foreground: 195 46% 16%;
+        --popover: 40 48% 98%;
+        --popover-foreground: 195 46% 16%;
+        --primary: 177 72% 28%;
+        --primary-foreground: 38 42% 97%;
+        --secondary: 36 41% 87%;
+        --secondary-foreground: 195 46% 16%;
+        --muted: 36 30% 89%;
+        --muted-foreground: 195 15% 38%;
+        --accent: 40 63% 55%;
+        --accent-foreground: 195 46% 12%;
+        --destructive: 0 60% 45%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 33 25% 84%;
+        --input: 33 25% 84%;
+        --ring: 177 72% 28%;
+        --radius: 0.75rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-sand text-ink font-sans antialiased;
+        text-rendering: optimizeLegibility;
+    }
+    ::selection {
+        background: #d9a441;
+        color: #16343c;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f7f1e6;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #d9cdb6;
+        border-radius: 8px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #c9a227;
+    }
+}
+
+/* film grain */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* lenis */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* typewriter caret */
+@keyframes tw-blink {
+    0%, 55% { opacity: 1; }
+    56%, 100% { opacity: 0; }
+}
+.tw-caret {
+    display: inline-block;
+    width: 3px;
+    height: 0.82em;
+    margin-left: 3px;
+    background: #d9a441;
+    transform: translateY(0.08em);
+    animation: tw-blink 1s steps(1) infinite;
+}
+
+/* waveform bars */
+@keyframes wave-pulse {
+    0%, 100% { transform: scaleY(0.3); }
+    50% { transform: scaleY(1); }
+}
+.wave-bar {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: wave-pulse 1.4s ease-in-out infinite;
+}
+
+/* marquee */
+@keyframes marquee-move {
+    to { transform: translateX(-50%); }
+}
+.marquee-track {
+    animation: marquee-move 38s linear infinite;
+}
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* grant badge shine */
+@keyframes shine-sweep {
+    0% { transform: translateX(-130%) skewX(-15deg); }
+    55%, 100% { transform: translateX(260%) skewX(-15deg); }
+}
+.grant-shine {
+    position: relative;
+    overflow: hidden;
+}
+.grant-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    animation: shine-sweep 3.4s ease-in-out infinite;
+}
+
+/* floating decorations */
+@keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(9px); }
+}
+.anim-bob {
+    animation: bob 2.2s ease-in-out infinite;
+}
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+.anim-float {
+    animation: float-slow 7s ease-in-out infinite;
+}
+
+/* CSS building silhouette (windows on brick) */
+.bld {
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.16) 0 3px, transparent 3px 11px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0 3px, transparent 3px 9px),
+        #8a3a26;
+    border-radius: 3px 3px 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track,
+    .wave-bar,
+    .anim-bob,
+    .anim-float,
+    .grant-shine::after,
+    .tw-caret {
+        animation: none;
+    }
+}
